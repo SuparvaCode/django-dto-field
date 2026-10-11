@@ -33,7 +33,7 @@ classifiers = [
     "Topic :: Database",
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Typing :: Typed",
-    "Development Status :: 5 - Production",
+    "Development Status :: 5 - Production/Stable",
 ]
 
 dependencies = ["django>=5.2", "msgspec>=0.20.0,<0.23.0"]
