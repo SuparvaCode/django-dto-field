@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0] 2026-10-11
+
+### Added
+
+- Contributor Covenant 2.1 `CODE_OF_CONDUCT.md` with a private reporting contact and a link from the contribution guide.
+- A README comparison of Django's `JSONField` and `DTOField` using the same nested dataclasses, showing automatic conversion, schema validation, and JSON lookups.
+- A README table of contents and a monthly PyPI downloads badge.
+- Regression tests for the renamed field's migration import path and the removal of the character-field module.
+
+### Changed
+
+- **Breaking:** rename the JSON-backed `DTOJSONField` to `DTOField`, imported from `django_dto_field.fields.json`. Native JSON storage and field behavior are unchanged. The old name is removed; application imports and historical migration references must be updated.
+- Reorganize the README around practical examples, supported DTO types, and the two remaining model fields, replacing the feature checklist and clarifying when plain `JSONField` may be preferable.
+- Update unit, property-based, and Django E2E tests for JSON and binary fields after removing character-field support.
+- Clarify contribution and repository guidance for dependency installation, linting, coverage exclusions, supported Python/Django combinations, CI triggers, and database test setup.
+
+### Fixed
+
+- Correct missing imports and undefined variables in README examples, and clarify dictionary validation, assignment validation, and optional form input.
+- Fix README badge links, labels, and HTML nesting; load the logo from GitHub so it also displays on PyPI, and update repository links to `crashed-pixels/django-dto-field`.
+- Synchronize the editable package version in `uv.lock` with the declared `0.2.0` version.
+
+### Removed
+
+- **Breaking:** remove `DTOCharField` and its `TextStorage` implementation. Supported DTO model fields are now `DTOField` and `DTOBinaryField`; imports of the removed field in application code or historical migrations must be updated.
+
 ## [0.2.0] 2026-10-09
 
 ### Added
